@@ -112,16 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
           localStorage.setItem('tagliaAcquistataMod', selectedSize);
           localStorage.setItem('coloreAcquistatoMod', selectedColor.color);
 
-          window.location.href = "/listaProdotti/listaProdotti.html";
+          window.location.href = "../listaProdotti/listaProdotti.php";
         }
       });
     }
 
     document.getElementById("view-features").addEventListener("click", () => {
-        window.location.href = "/caratteristicheProdotto/caratteristiche.html";
+        window.location.href = "../caratteristicheProdotto/caratteristiche.php";
     });
 
     document.getElementById("back-to-shopping").addEventListener("click", () => {
-        window.location.href = "/listaProdotti/listaProdotti.html";
+        window.location.href = "../listaProdotti/listaProdotti.php";
     });
 });

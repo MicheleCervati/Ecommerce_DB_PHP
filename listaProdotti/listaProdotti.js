@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Carica i prodotti dal file JSON
-    fetch('/json/prodotti.json')
+    fetch('../json/prodotti.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Errore nel caricamento del file JSON');
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!event.target.classList.contains('color-button')) {
                         localStorage.setItem('selectedProductId', product.id);
                         localStorage.setItem('selectedProductColor', selectedColor);
-                        window.location.href = '/prodottoSingolo/prodottoSingolo.html';
+                        window.location.href = '../prodottoSingolo/prodottoSingolo.php';
                     }
                 });
             });

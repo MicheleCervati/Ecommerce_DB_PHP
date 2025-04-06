@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    fetch('/json/prodotti.json')
+    fetch('../json/prodotti.json')
         .then(response => response.json())
         .then(data => {
             const product = data.products.find(p => p.id === productId);
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error("Errore nel caricamento del file JSON:", error));
 
     document.getElementById("back-to-shopping").addEventListener("click", () => {
-        window.location.href = "/listaProdotti/listaProdotti.html";
+        window.location.href = "../listaProdotti/listaProdotti.php";
     });
 
     document.getElementById("continue-shopping").addEventListener("click", () => {
         const isModifying = localStorage.getItem('isModifyingProduct') === 'true';
-        window.location.href = isModifying ? "/prodottoSingoloModifica/prodottoSingolo.html" : "/prodottoSingolo/prodottoSingolo.html";
+        window.location.href = isModifying ? "../prodottoSingoloModifica/prodottoSingolo.php" : "../prodottoSingolo/prodottoSingolo.php";
     });
 });

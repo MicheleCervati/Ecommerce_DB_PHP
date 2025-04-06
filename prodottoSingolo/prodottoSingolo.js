@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const nomeFileJSON = "/json/prodotti.json";
+    const nomeFileJSON = "./../json/prodotti.json";
 
     let product = null; // Memorizza il prodotto selezionato
     let selectedColor = null; // Memorizza il colore selezionato
@@ -122,19 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const fromBundle = localStorage.getItem('fromBundle') === 'true';
           if (fromBundle) {
-            window.location.href = "/carrello.html";
+            window.location.href = "../carrello.php";
           } else {
-            window.location.href = "/listaProdotti/listaProdotti.html";
+            window.location.href = "../listaProdotti/listaProdotti.php";
           }
         }
       });
     }
 
     document.getElementById("view-features").addEventListener("click", () => {
-        window.location.href = "/caratteristicheProdotto/caratteristiche.html";
+        window.location.href = "../caratteristicheProdotto/caratteristiche.php";
     });
 
     document.getElementById("back-to-shopping").addEventListener("click", () => {
-        window.location.href = "/listaProdotti/listaProdotti.html";
+        window.location.href = "../listaProdotti/listaProdotti.php";
     });
 });

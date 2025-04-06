@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.border = ''; // Ripristina il bordo originale
     });
 
-    // Aggiungi evento click per reindirizzare alla pagina prodottoSingolo.html
+    // Aggiungi evento click per reindirizzare alla pagina prodottoSingolo.php
     card.addEventListener('click', () => {
       // Memorizza l'ID del prodotto nel localStorage
       localStorage.setItem('selectedProductId', index);
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('selectedProductColor', selectedColorButton.textContent);
       }
 
-      // Reindirizza alla pagina prodottoSingolo.html
-      window.location.href = '/../prodottoSingolo/prodottoSingolo.html';
+      // Reindirizza alla pagina prodottoSingolo.php
+      window.location.href = '../prodottoSingolo/prodottoSingolo.php';
     });
   });
 });

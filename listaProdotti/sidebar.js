@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('selectedProductId', item.id);
                     localStorage.setItem('selectedProductColor', item.color);
                     localStorage.setItem('isModifyingProduct', 'true');
-                    window.location.href = '/prodottoSingoloModifica/prodottoSingolo.html';
+                    window.location.href = '../prodottoSingoloModifica/prodottoSingolo.php';
                 }
             });
         });
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkoutButton.addEventListener('click', () => {
         if (cartItems.length > 0) {
-            window.location.href = '/../carrello.html';
+            window.location.href = '../carrello.php';
         }
     });
 

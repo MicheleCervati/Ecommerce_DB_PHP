@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItem.classList.add('list-group-item', 'd-flex', 'align-items-center', 'mb-3');
 
             const img = document.createElement('img');
-            img.src = item.image;
+            img.src = item.image.substring(1);
             img.alt = item.title;
             img.classList.add('img-thumbnail', 'me-3');
             img.style.width = '100px';
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyCoupon() {
         const couponCode = couponCodeInput.value.trim();
-        fetch('/config/config.json')
+        fetch('./config/config.json')
             .then(response => response.json())
             .then(data => {
                 const coupon = data.sconti.find(c => c.codice_sconto === couponCode);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderBundle() {
-        fetch('/json/prodotti.json')
+        fetch('./json/prodotti.json')
             .then(response => response.json())
             .then(data => {
                 const products = data.products;
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const img = document.createElement('img');
                     img.classList.add('card-img-top');
-                    img.src = product.colors[0].image;
+                    img.src = product.colors[0].image.substring(1);
                     img.alt = product.title;
 
                     const cardBody = document.createElement('div');
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             button.style.color = 'white'; // Imposta il colore del testo su bianco
 
                             // Aggiorna l'immagine, il prezzo e le taglie disponibili
-                            img.src = colorOption.image;
+                            img.src = colorOption.image.substring(1);
                             price.innerHTML = `<strong>Prezzo:</strong> €${colorOption.price.toFixed(2)}`;
                             sizes.innerHTML = `<strong>Taglie:</strong> ${colorOption.sizes.join(', ')}`;
 
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         localStorage.setItem('selectedProductId', product.id);
                         localStorage.setItem('selectedProductColor', selectedColor);
                         localStorage.setItem('fromBundle', 'true');
-                        window.location.href = '/prodottoSingolo/prodottoSingolo.html';
+                        window.location.href = './prodottoSingolo/prodottoSingolo.php';
                     });
                 });
             })
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     backToShoppingButton.addEventListener('click', () => {
-        window.location.href = '/../listaProdotti/listaProdotti.html';
+        window.location.href = './listaProdotti/listaProdotti.php';
     });
 
     applyCouponButton.addEventListener('click', applyCoupon);
